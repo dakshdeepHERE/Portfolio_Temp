@@ -27,7 +27,7 @@ class _PortfolioState extends State<Portfolio> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Daksha Deep',
+          'Daksh Deep',
         ),
         actions: isMobile ? null : navItems,
       ),
