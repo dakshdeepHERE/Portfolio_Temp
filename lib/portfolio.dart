@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolioo/components/about.dart';
 import 'package:portfolioo/components/education.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Portfolio extends StatefulWidget {
   const Portfolio({super.key});
