@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolioo/components/about.dart';
+import 'package:portfolioo/components/education.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Portfolio extends StatefulWidget {
   const Portfolio({super.key});
@@ -24,7 +27,9 @@ class _PortfolioState extends State<Portfolio> {
     isMobile = MediaQuery.of(context).size.width > 700 ? false : true;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Daksha Deep'),
+        title: const Text(
+          'Daksha Deep',
+        ),
         actions: isMobile ? null : navItems,
       ),
       drawer: isMobile
@@ -34,8 +39,17 @@ class _PortfolioState extends State<Portfolio> {
               ),
             )
           : null,
-      body: Center(
-        child: Text('Portfolio'),
+      body: const SingleChildScrollView(
+        child: Column(
+          children: [
+            Wrap(
+              children: [
+                About(),
+                Education(),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

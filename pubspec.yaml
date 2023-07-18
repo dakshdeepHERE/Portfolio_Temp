@@ -19,6 +19,7 @@ dependencies:
   velocity_x: ^4.1.0
   timelines: ^0.1.0
   font_awesome_flutter: ^10.5.0
+  google_fonts: ^5.1.0
 
 dev_dependencies:
   flutter_test:

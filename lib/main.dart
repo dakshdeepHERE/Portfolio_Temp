@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolioo/components/portfolio.dart';
+import 'package:portfolioo/portfolio.dart';
 
 void main() {
   runApp(const MyApp());
