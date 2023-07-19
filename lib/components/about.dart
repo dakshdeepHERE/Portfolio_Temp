@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class About extends StatefulWidget {
@@ -45,26 +46,71 @@ class _AboutState extends State<About> {
             const Wrap(
               spacing: 8.0,
               children: [
-                Padding(
+                Chip(
+                  label: Text("Flutter Developer"),
+                  labelStyle: TextStyle(color: Colors.white),
+                  backgroundColor: Colors.green,
                   padding: EdgeInsets.all(8.0),
-                  child: Chip(
-                    label: Text("Flutter Developer"),
-                    labelStyle: TextStyle(color: Colors.white),
-                    backgroundColor: Colors.green,
-                    padding: EdgeInsets.all(8.0),
-                  ),
                 ),
-                Padding(
+                Chip(
+                  label: Text("UI/UX"),
+                  labelStyle: TextStyle(color: Colors.white),
+                  backgroundColor: Colors.green,
                   padding: EdgeInsets.all(8.0),
-                  child: Chip(
-                    label: Text("UI/UX"),
-                    labelStyle: TextStyle(color: Colors.white),
-                    backgroundColor: Colors.green,
-                    padding: EdgeInsets.all(8.0),
-                  ),
                 ),
               ],
-            )
+            ),
+            //
+            const Divider(),
+            //
+            Container(
+              child: const Row(
+                children: [
+                  Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Padding(
+                        padding: EdgeInsets.all(5.0),
+                        child: Card(
+                            child: FaIcon(
+                          FontAwesomeIcons.githubAlt,
+                          size: 25,
+                        )),
+                      )),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "dakshdeepHERE",
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+            Container(
+              child: const Row(
+                children: [
+                  Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Padding(
+                        padding: EdgeInsets.all(5.0),
+                        child: Card(
+                            child: FaIcon(
+                          FontAwesomeIcons.githubAlt,
+                          size: 25,
+                        )),
+                      )),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "dakshdeepHERE",
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
