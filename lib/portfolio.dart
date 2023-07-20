@@ -26,8 +26,11 @@ class _PortfolioState extends State<Portfolio> {
     isMobile = MediaQuery.of(context).size.width > 700 ? false : true;
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Daksh Deep',
+        title: const Padding(
+          padding: EdgeInsets.all(10.0),
+          child: Text(
+            'My Logo',
+          ),
         ),
         actions: isMobile ? null : navItems,
       ),
@@ -42,9 +45,16 @@ class _PortfolioState extends State<Portfolio> {
         child: Column(
           children: [
             Wrap(
+              alignment: WrapAlignment.center,
               children: [
-                About(),
-                Education(),
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: About(),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Education(),
+                ),
               ],
             ),
           ],
