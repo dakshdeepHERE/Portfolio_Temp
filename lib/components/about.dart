@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -63,62 +65,89 @@ class _AboutState extends State<About> {
                 ],
               ),
               const Divider(),
-              Container(
-                child: const Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: Padding(
-                        padding: EdgeInsets.all(5.0),
-                        child: Card(
-                          child: FaIcon(
-                            FontAwesomeIcons.githubAlt,
-                            size: 25,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "dakshdeepHERE",
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-              Container(
-                child: const Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: Padding(
-                        padding: EdgeInsets.all(5.0),
-                        child: Card(
-                          child: FaIcon(
-                            FontAwesomeIcons.githubAlt,
-                            size: 25,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "dakshdeepHERE",
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
+              buildGitHubCard(),
+              buildLinkedInCard(),
             ],
           ),
         ),
       ),
     );
+  }
+
+  GestureDetector buildGitHubCard() {
+    return GestureDetector(
+      onTap: () => _launchURL('https://github.com/dakshdeepHERE'),
+      child: const Card(
+        child: Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Padding(
+                padding: EdgeInsets.all(5.0),
+                child: Card(
+                  child: FaIcon(
+                    FontAwesomeIcons.githubAlt,
+                    size: 25,
+                  ),
+                ),
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "dakshdeepHERE", // Replace with your GitHub username
+                ),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  GestureDetector buildLinkedInCard() {
+    return GestureDetector(
+      onTap: () => _launchURL('https://www.linkedin.com/in/daksh-deep'),
+      child: const Card(
+        child: Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Padding(
+                padding: EdgeInsets.all(5.0),
+                child: Card(
+                  child: FaIcon(
+                    FontAwesomeIcons.linkedinIn,
+                    size: 25,
+                    color: Colors.blue,
+                  ),
+                ),
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "daksh-deep", // Replace with your LinkedIn profile name
+                ),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _launchURL(String url) async {
+    try {
+      await Process.run('open', [url]);
+    } catch (e) {
+      launchFallbackURL();
+    }
+  }
+
+  void launchFallbackURL() async {
+    await Process.run('open', ['https://linktr.ee/DakshDeep']);
   }
 }

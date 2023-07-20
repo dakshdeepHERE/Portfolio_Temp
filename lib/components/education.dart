@@ -40,14 +40,26 @@ class _EducationState extends State<Education> {
                 itemCount: 6,
                 contentsAlign: ContentsAlign.alternating,
                 contentsBuilder: (context, index) {
-                  return Card(
+                  return const Card(
                     child: Padding(
-                      padding: const EdgeInsets.all(12),
+                      padding: EdgeInsets.all(12),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("20 March 2022"),
-                          Text("Completed an Event")
+                          Text(
+                            "29 Dec 2022",
+                            style: TextStyle(
+                                fontSize: 22.0,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: AutofillHints.addressCity),
+                          ),
+                          Text(
+                            "Completed a Milestone",
+                            style: TextStyle(
+                                fontSize: 12,
+                                fontFamily: AutofillHints.addressCity,
+                                fontWeight: FontWeight.w400),
+                          )
                         ],
                       ),
                     ),
