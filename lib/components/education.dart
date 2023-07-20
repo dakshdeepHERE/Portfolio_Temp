@@ -49,14 +49,21 @@ class _EducationState extends State<Education> {
                           Text(
                             "29 Dec 2022",
                             style: TextStyle(
-                                fontSize: 22.0,
-                                fontWeight: FontWeight.bold,
+                                fontSize: 12.0,
+                                color: Colors.blue,
                                 fontFamily: AutofillHints.addressCity),
                           ),
                           Text(
-                            "Completed a Milestone",
+                            "Milestone",
                             style: TextStyle(
-                                fontSize: 12,
+                                fontSize: 22.0,
+                                fontFamily: AutofillHints.addressCity,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "Milestone Description",
+                            style: TextStyle(
+                                fontSize: 14.0,
                                 fontFamily: AutofillHints.addressCity,
                                 fontWeight: FontWeight.w400),
                           )

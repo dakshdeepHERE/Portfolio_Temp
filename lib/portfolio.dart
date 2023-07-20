@@ -13,7 +13,7 @@ class _PortfolioState extends State<Portfolio> {
   List<Widget> navItems = [
     Padding(
       padding: const EdgeInsets.all(8.0),
-      child: ElevatedButton(onPressed: () {}, child: const Text('Education')),
+      child: ElevatedButton(onPressed: () {}, child: const Text('Experience')),
     ),
     Padding(
       padding: const EdgeInsets.all(8.0),
@@ -42,22 +42,24 @@ class _PortfolioState extends State<Portfolio> {
             )
           : null,
       body: const SingleChildScrollView(
-        child: Column(
-          children: [
-            Wrap(
-              alignment: WrapAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: About(),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Education(),
-                ),
-              ],
-            ),
-          ],
+        child: Center(
+          child: Column(
+            children: [
+              Wrap(
+                alignment: WrapAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: About(),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Education(),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

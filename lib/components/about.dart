@@ -12,10 +12,16 @@ class About extends StatefulWidget {
 }
 
 class _AboutState extends State<About> {
+  Color _defaultGitHubColor = Colors.transparent;
+  final Color _hoverGitHubColor = Colors.grey.shade300;
+
+  Color _defaultLinkedInColor = Colors.transparent;
+  final Color _hoverLinkedInColor = Colors.blue.shade100;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(12.0), // Add top padding here
+      padding: const EdgeInsets.all(12.0),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(32.0),
         child: Container(
@@ -48,17 +54,18 @@ class _AboutState extends State<About> {
                 ),
               ),
               const Wrap(
+                alignment: WrapAlignment.center,
                 spacing: 8.0,
                 children: [
                   Chip(
                     label: Text("Flutter Developer"),
-                    labelStyle: TextStyle(color: Colors.white),
+                    labelStyle: TextStyle(color: Colors.white, fontSize: 14.0),
                     backgroundColor: Colors.green,
                     padding: EdgeInsets.all(8.0),
                   ),
                   Chip(
                     label: Text("UI/UX"),
-                    labelStyle: TextStyle(color: Colors.white),
+                    labelStyle: TextStyle(color: Colors.white, fontSize: 14.0),
                     backgroundColor: Colors.green,
                     padding: EdgeInsets.all(8.0),
                   ),
@@ -77,30 +84,33 @@ class _AboutState extends State<About> {
   GestureDetector buildGitHubCard() {
     return GestureDetector(
       onTap: () => _launchURL('https://github.com/dakshdeepHERE'),
-      child: const Card(
-        child: Row(
-          children: [
-            Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Padding(
-                padding: EdgeInsets.all(5.0),
-                child: Card(
+      child: MouseRegion(
+        onEnter: (_) => setState(() => _defaultGitHubColor = _hoverGitHubColor),
+        onExit: (_) => setState(() => _defaultGitHubColor = Colors.transparent),
+        child: Container(
+          color: _defaultGitHubColor,
+          child: const Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Padding(
+                  padding: EdgeInsets.all(5.0),
                   child: FaIcon(
                     FontAwesomeIcons.githubAlt,
                     size: 25,
                   ),
                 ),
               ),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "dakshdeepHERE", // Replace with your GitHub username
-                ),
-              ],
-            )
-          ],
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "dakshdeepHERE", // Replace with your GitHub username
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -109,14 +119,19 @@ class _AboutState extends State<About> {
   GestureDetector buildLinkedInCard() {
     return GestureDetector(
       onTap: () => _launchURL('https://www.linkedin.com/in/daksh-deep'),
-      child: const Card(
-        child: Row(
-          children: [
-            Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Padding(
-                padding: EdgeInsets.all(5.0),
-                child: Card(
+      child: MouseRegion(
+        onEnter: (_) =>
+            setState(() => _defaultLinkedInColor = _hoverLinkedInColor),
+        onExit: (_) =>
+            setState(() => _defaultLinkedInColor = Colors.transparent),
+        child: Container(
+          color: _defaultLinkedInColor,
+          child: const Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Padding(
+                  padding: EdgeInsets.all(5.0),
                   child: FaIcon(
                     FontAwesomeIcons.linkedinIn,
                     size: 25,
@@ -124,16 +139,16 @@ class _AboutState extends State<About> {
                   ),
                 ),
               ),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "daksh-deep", // Replace with your LinkedIn profile name
-                ),
-              ],
-            )
-          ],
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "daksh-deep", // Replace with your LinkedIn profile name
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -150,4 +165,13 @@ class _AboutState extends State<About> {
   void launchFallbackURL() async {
     await Process.run('open', ['https://linktr.ee/DakshDeep']);
   }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: Scaffold(
+      appBar: AppBar(title: const Text("About")),
+      body: const About(),
+    ),
+  ));
 }
