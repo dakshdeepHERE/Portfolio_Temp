@@ -24,6 +24,7 @@ class _EducationState extends State<Education> {
               BorderRadius.circular(22), // Adjust the radius as you prefer
         ),
         padding: const EdgeInsets.all(30.0),
+        height: 700.0,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment
               .start, // Delete this if you don't want education to be on left aligned

@@ -32,8 +32,13 @@ class _AboutState extends State<About> {
             color: Colors.grey.shade200,
           ),
           padding: const EdgeInsets.all(30.0),
+          height: 700.0,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              Column(
+                children: [],
+              ),
               ClipRRect(
                 borderRadius: BorderRadius.circular(200.0),
                 child: Image.asset(
