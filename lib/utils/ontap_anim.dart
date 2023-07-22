@@ -41,15 +41,14 @@ class _AnimatedContactState extends State<AnimatedContact> {
         padding: const EdgeInsets.all(8.0),
         child: Row(
           children: [
-            ElevatedButton(
-                onPressed: () {},
+            Card(
                 child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: FaIcon(
-                    widget.iconData,
-                    size: 20.0,
-                  ),
-                )),
+              padding: const EdgeInsets.all(12.0),
+              child: FaIcon(
+                widget.iconData,
+                size: 20.0,
+              ),
+            )),
             const SizedBox(
               width: 8.0,
             ),

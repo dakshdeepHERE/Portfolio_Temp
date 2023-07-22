@@ -1,26 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolioo/utils/animated_icon.dart';
 
 class Socials extends StatelessWidget {
   const Socials({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        FaIcon(
-          FontAwesomeIcons.twitter,
-          color: Colors.blue,
+        AnimatedIconButton(iconData: FontAwesomeIcons.twitter, onTap: () {}),
+        const SizedBox(
+          width: 4.0,
         ),
-        FaIcon(
-          FontAwesomeIcons.dribbble,
-          color: Colors.red,
-        ),
-        FaIcon(
-          FontAwesomeIcons.hashnode,
-          color: Colors.blueAccent,
+        AnimatedIconButton(iconData: FontAwesomeIcons.hashnode, onTap: () {}),
+        const SizedBox(
+          width: 4.0,
         ),
       ],
     );
