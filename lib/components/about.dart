@@ -1,5 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter/material.dart';
+import 'package:portfolioo/utils/mysocials.dart';
+import 'package:portfolioo/utils/ontap_anim.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class About extends StatefulWidget {
@@ -15,8 +18,12 @@ class _AboutState extends State<About> {
     return Container(
       width: context.screenWidth < 900
           ? context.screenWidth * 0.9
-          : context.screenWidth * 0.3,
-      decoration: BoxDecoration(color: Colors.grey.shade200),
+          : context.screenWidth < 1600
+              ? context.screenWidth * 0.3
+              : context.screenWidth * 0.2,
+      decoration: BoxDecoration(
+          color: Colors.grey.shade200,
+          borderRadius: BorderRadius.circular(22.0)),
       child: Column(
         children: [
           Image.asset(
@@ -35,6 +42,7 @@ class _AboutState extends State<About> {
             textAlign: TextAlign.center,
           ),
           Wrap(
+            alignment: WrapAlignment.center,
             spacing: 8.0,
             runSpacing: 8.0,
             children: [
@@ -43,61 +51,33 @@ class _AboutState extends State<About> {
                   "App Developer",
                 ),
                 backgroundColor: Colors.amber.shade200,
-                labelStyle: const TextStyle(color: Colors.purple),
+                labelStyle:
+                    const TextStyle(color: Colors.purple, fontSize: 14.0),
                 padding: const EdgeInsets.all(8.0),
               ),
               Chip(
                 label: const Text('UI/UX'),
                 backgroundColor: Colors.amber.shade200,
                 padding: const EdgeInsets.all(8.0),
-                labelStyle: const TextStyle(color: Colors.purple),
+                labelStyle:
+                    const TextStyle(color: Colors.purple, fontSize: 14.0),
               ),
             ],
           ),
           Divider(),
-          Container(
-            child: Row(
-              children: [
-                Card(
-                    child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: FaIcon(
-                    FontAwesomeIcons.github,
-                    size: 20.0,
-                  ),
-                )),
-                const SizedBox(
-                  width: 8.0,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [Text('GitHub'), Text('dakshdeepHERE')],
-                )
-              ],
-            ),
-          ),
-          Container(
-            child: Row(
-              children: [
-                Card(
-                    child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: FaIcon(
-                    FontAwesomeIcons.linkedinIn,
-                    color: Colors.blue,
-                    size: 20.0,
-                  ),
-                )),
-                const SizedBox(
-                  width: 8.0,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [Text('LinkedIn'), Text('daksh-deep')],
-                )
-              ],
-            ),
-          ),
+          //
+          AnimatedContact(
+              iconData: FontAwesomeIcons.github,
+              onTap: () {},
+              subtitle: 'dakshdeepHere',
+              title: 'GitHub'),
+          AnimatedContact(
+              iconData: FontAwesomeIcons.linkedinIn,
+              onTap: () {},
+              subtitle: 'daksh-deep',
+              title: 'LinkedIn'),
+
+          Socials(),
         ],
       ),
     );
