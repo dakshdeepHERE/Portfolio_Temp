@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class About extends StatefulWidget {
@@ -52,6 +53,50 @@ class _AboutState extends State<About> {
                 labelStyle: const TextStyle(color: Colors.purple),
               ),
             ],
+          ),
+          Divider(),
+          Container(
+            child: Row(
+              children: [
+                Card(
+                    child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: FaIcon(
+                    FontAwesomeIcons.github,
+                    size: 20.0,
+                  ),
+                )),
+                const SizedBox(
+                  width: 8.0,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [Text('GitHub'), Text('dakshdeepHERE')],
+                )
+              ],
+            ),
+          ),
+          Container(
+            child: Row(
+              children: [
+                Card(
+                    child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: FaIcon(
+                    FontAwesomeIcons.linkedinIn,
+                    color: Colors.blue,
+                    size: 20.0,
+                  ),
+                )),
+                const SizedBox(
+                  width: 8.0,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [Text('LinkedIn'), Text('daksh-deep')],
+                )
+              ],
+            ),
           ),
         ],
       ),
