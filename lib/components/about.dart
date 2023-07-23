@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:portfolioo/utils/mysocials.dart';
 import 'package:portfolioo/utils/ontap_anim.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class About extends StatefulWidget {
