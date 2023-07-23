@@ -2,6 +2,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolioo/utils/mysocials.dart';
 import 'package:portfolioo/utils/ontap_anim.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class About extends StatefulWidget {
@@ -12,6 +14,14 @@ class About extends StatefulWidget {
 }
 
 class _AboutState extends State<About> {
+  void _launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -82,7 +92,9 @@ class _AboutState extends State<About> {
               Divider(),
               AnimatedContact(
                   iconData: FontAwesomeIcons.github,
-                  onTap: () {},
+                  onTap: () {
+                    _launchURL('https://github.com/dakshdeepHere');
+                  },
                   subtitle: 'dakshdeepHere',
                   title: 'GitHub'),
               AnimatedContact(
@@ -94,8 +106,8 @@ class _AboutState extends State<About> {
           ),
           Column(
             children: [
-              Divider(),
               Socials(),
+              Divider(),
             ],
           ),
         ],

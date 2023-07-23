@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Portfolio',
       theme: ThemeData(
         primarySwatch: Colors.purple,
-        canvasColor: Colors.blueGrey.shade200,
+        canvasColor: Colors.purple.shade50,
         useMaterial3: true,
         fontFamily: "custom",
       ),

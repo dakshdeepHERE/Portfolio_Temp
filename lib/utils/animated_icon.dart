@@ -24,7 +24,7 @@ class _AnimatedContactState extends State<AnimatedIconButton> {
         });
       },
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 400),
         decoration: BoxDecoration(
           color: isHovering ? Colors.blue.shade100 : Colors.grey.shade200,
           borderRadius: BorderRadius.circular(22.0),
